@@ -32,29 +32,29 @@ module.exports = () => {
         name: "Just Another Text Editor",
         icons: [
           {
-            src: "./assets/icons/logo.png",
+            src: "./assets/icons/logo_96x96.png",
             type: "image/png",
             sizes: "96x96",
             purpose: "any maskable",
           },
-          // {
-          //   src: "./assets/icons/icon_128x128.png",
-          //   type: "image/png",
-          //   sizes: "128x128",
-          //   purpose: "any maskable",
-          // },
-          // {
-          //   src: "./assets/icons/icon_192x192.png",
-          //   type: "image/png",
-          //   sizes: "192x192",
-          //   purpose: "any maskable",
-          // },
-          // {
-          //   src: "./assets/icons/icon_512x512.png",
-          //   type: "image/png",
-          //   sizes: "512x512",
-          //   purpose: "any maskable",
-          // },
+          {
+            src: "./assets/icons/logo_128x128.png",
+            type: "image/png",
+            sizes: "128x128",
+            purpose: "any maskable",
+          },
+          {
+            src: "./assets/icons/logo_192x192.png",
+            type: "image/png",
+            sizes: "192x192",
+            purpose: "any maskable",
+          },
+          {
+            src: "./assets/icons/logo_512x512.png",
+            type: "image/png",
+            sizes: "512x512",
+            purpose: "any maskable",
+          },
         ],
         orientation: "portrait",
         display: "standalone",
