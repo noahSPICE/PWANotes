@@ -15,8 +15,9 @@ module.exports = () => {
       install: "./src/js/install.js",
     },
     output: {
-      filename: "bundle.js",
+      filename: "[name]bundle.js",
       path: path.resolve(__dirname, "dist"),
+      publicPath: "",
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -25,44 +26,20 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "service-worker.js",
+        swDest: "./src-sw.js",
       }),
       new WebpackPwaManifest({
         short_name: "JATE",
         name: "Just Another Text Editor",
+        fingerprints: false,
         icons: [
           {
-            src: "./assets/icons/logo_96x96.png",
-            type: "image/png",
-            sizes: "96x96",
-            purpose: "any maskable",
-          },
-          {
-            src: "./assets/icons/logo_128x128.png",
-            type: "image/png",
-            sizes: "128x128",
-            purpose: "any maskable",
-          },
-          {
-            src: "./assets/icons/logo_192x192.png",
-            type: "image/png",
-            sizes: "192x192",
-            purpose: "any maskable",
-          },
-          {
-            src: "./assets/icons/logo_512x512.png",
-            type: "image/png",
-            sizes: "512x512",
-            purpose: "any maskable",
+            src: path.resolve("assets/icons/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
           },
         ],
-        orientation: "portrait",
-        display: "standalone",
-        start_url: "./",
-        description: "Virtual Notebook",
-        background_color: "#7eb4e2",
-        theme_color: "#7eb4e2",
       }),
+      new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
     ],
 
     module: {
